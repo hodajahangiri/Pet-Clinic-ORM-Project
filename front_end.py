@@ -2,6 +2,7 @@
 from bp_auth import register,login
 from bp_owner import view_owner, update_owner,delete_owner
 from bp_pets import view_pets,create_pet, update_pet,delete_pet
+from bp_appointments import create_appointment,view_appointments,reschedule_appointment,complete_appointment
 
 from models import session,Owners
 
@@ -93,16 +94,16 @@ def appointments_menu(current_user):
         if choice == '1':
             #Function to create a new appointment between one of the user's pets
             #and one of the vets
-            pass
+            create_appointment(current_user)
         elif choice == '2':
             #View current user's appointments
-            pass
+            view_appointments(current_user)
         elif choice == '3':
             #Reschedule appointment (change the date)
-            pass
+            reschedule_appointment(current_user)
         elif choice == '4':
             #Complete appointment (change status to complete)
-            pass
+            complete_appointment(current_user)
         elif choice =='5':
             return
 
